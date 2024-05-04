@@ -1,0 +1,188 @@
+[
+    {
+        "title": "Basic Oil Change",
+        "img": "https://i.ibb.co/PC8ZJjP/car-mechanic-replacing-pouring-fresh-oil-into-engine-maintenance-repair-service-station-39420-226.jpg",
+        "price": "$29.99",
+        "description": "A basic oil change service including oil filter replacement and fluid top-up.",
+        "facility": [
+            {
+                "facility_name": "Oil Filter Replacement",
+                "description": "Replacement of the oil filter with a new one."
+            },
+            {
+                "facility_name": "Fluid Top-up",
+                "description": "Topping up of essential fluids like coolant, brake fluid, and windshield washer fluid."
+            }
+        ],
+        "time": "30 minutes"
+    },
+    {
+        "title": "Wheel Alignment",
+        "img": "https://i.ibb.co/K71tH5m/car-mechanic-changing-wheels-car-1303-26651.jpg",
+        "price": "$59.99",
+        "description": "Alignment service to ensure your wheels are properly aligned for optimal driving and tire wear.",
+        "facility": [
+            {
+                "facility_name": "Alignment Check",
+                "description": "Thorough inspection to determine if alignment is required."
+            },
+            {
+                "facility_name": "Adjustment",
+                "description": "Precise adjustment of wheel angles as per manufacturer specifications."
+            }
+        ],
+        "time": "1 hour"
+    },
+    {
+        "title": "Brake Pad Replacement",
+        "img": "https://i.ibb.co/PNg05Fh/auto-mechanic-man-with-electric-screwdriver-changing-tire-auto-repair-shop-38480-1203.jpg",
+        "price": "$99.99",
+        "description": "Replacement of worn brake pads with new ones to ensure effective braking performance.",
+        "facility": [
+            {
+                "facility_name": "Brake Inspection",
+                "description": "Comprehensive inspection of brake pads, rotors, and calipers."
+            },
+            {
+                "facility_name": "Pad Replacement",
+                "description": "Removal of old brake pads and installation of new ones."
+            }
+        ],
+        "time": "1.5 hours"
+    },
+    {
+        "title": "Tire Rotation",
+        "img": "https://i.ibb.co/5FsMkFp/mechanic-repairing-car-tire-1048944-1455007.jpg",
+        "price": "$19.99",
+        "description": "Rotation of tires to ensure even wear and extend tire life.",
+        "facility": [
+            {
+                "facility_name": "Tire Inspection",
+                "description": "Inspection of tire condition, tread depth, and pressure."
+            },
+            {
+                "facility_name": "Rotation",
+                "description": "Moving tires to different positions to promote even wear."
+            }
+        ],
+        "time": "45 minutes"
+    },
+    {
+        "title": "Engine Tune-up",
+        "img": "https://i.ibb.co/8b0fG6k/hands-mechanic-servicing-car-1170-1242.jpg",
+        "price": "$149.99",
+        "description": "Comprehensive tune-up service to optimize engine performance and fuel efficiency.",
+        "facility": [
+            {
+                "facility_name": "Spark Plug Replacement",
+                "description": "Replacement of spark plugs with new ones."
+            },
+            {
+                "facility_name": "Air Filter Replacement",
+                "description": "Replacement of air filter to ensure proper airflow."
+            },
+            {
+                "facility_name": "Fuel System Cleaning",
+                "description": "Cleaning of fuel injectors and throttle body for better fuel delivery."
+            }
+        ],
+        "time": "2 hours"
+    },
+    {
+        "title": "Coolant Flush",
+        "img": "https://i.ibb.co/QXRBK5c/car-engine-engine-compartment-car-engine-background-93675-128715.jpg",
+        "price": "$79.99",
+        "description": "Flush and replacement of old coolant to prevent overheating and corrosion.",
+        "facility": [
+            {
+                "facility_name": "Coolant Drain",
+                "description": "Draining of old coolant from the cooling system."
+            },
+            {
+                "facility_name": "Flush",
+                "description": "Thorough flushing of the system to remove any residue."
+            },
+            {
+                "facility_name": "Refill",
+                "description": "Refilling the system with fresh coolant."
+            }
+        ],
+        "time": "1.5 hours"
+    },
+    {
+        "title": "Transmission Fluid Change",
+        "img": "https://i.ibb.co/ry4xt44/automotive-gearbox-lubricating-oil-ai-technology-generated-image-1112-15462.jpg",
+        "price": "$129.99",
+        "description": "Replacement of old transmission fluid with new fluid for smooth gear shifting.",
+        "facility": [
+            {
+                "facility_name": "Fluid Drain",
+                "description": "Draining of old transmission fluid."
+            },
+            {
+                "facility_name": "Filter Replacement",
+                "description": "Replacement of transmission filter (if applicable)."
+            },
+            {
+                "facility_name": "Refill",
+                "description": "Refilling the transmission with new fluid."
+            }
+        ],
+        "time": "2 hours"
+    },
+    {
+        "title": "Battery Replacement",
+        "img": "https://i.ibb.co/yf99qQD/auto-mechanic-carries-replacement-car-battery-car-electrical-maintenance-41472-1113.jpg",
+        "price": "$99.99",
+        "description": "Replacement of old battery with a new one for reliable starting power.",
+        "facility": [
+            {
+                "facility_name": "Battery Inspection",
+                "description": "Testing battery condition and performance."
+            },
+            {
+                "facility_name": "Replacement",
+                "description": "Removal of old battery and installation of new one."
+            }
+        ],
+        "time": "1 hour"
+    },
+    {
+        "title": "Exhaust System Repair",
+        "img": "https://i.ibb.co/b5LSpsR/mechanic-repairing-car-auto-repair-shop-1048944-14777467.jpg",
+        "price": "$149.99",
+        "description": "Repair and replacement of exhaust system components to ensure proper exhaust flow and reduce noise.",
+        "facility": [
+            {
+                "facility_name": "Exhaust Inspection",
+                "description": "Thorough inspection of exhaust system for leaks and damage."
+            },
+            {
+                "facility_name": "Component Replacement",
+                "description": "Replacement of damaged or worn-out exhaust components."
+            }
+        ],
+        "time": "2 hours"
+    },
+    {
+        "title": "Full Service Package",
+        "img": "https://i.ibb.co/X7wjjBn/handsome-man-checks-engine-his-car-1157-27216.jpg",
+        "price": "$299.99",
+        "description": "Comprehensive package including oil change, filter replacement, fluid top-up, and inspection of major components.",
+        "facility": [
+            {
+                "facility_name": "Oil Change",
+                "description": "Replacement of engine oil and oil filter."
+            },
+            {
+                "facility_name": "Fluid Top-up",
+                "description": "Top-up of essential fluids like coolant, brake fluid, and windshield washer fluid."
+            },
+            {
+                "facility_name": "Component Inspection",
+                "description": "Thorough inspection of brakes, suspension, steering, and other major components."
+            }
+        ],
+        "time": "3 hours"
+    }
+]
