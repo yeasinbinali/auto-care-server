@@ -25,6 +25,7 @@ async function run() {
     try {
 
         const serviceCollection = client.db('AutoCareDB').collection('services');
+        const cartCollection = client.db('AutoCareDB').collection('carts');
 
         app.get('/services', async (req, res) => {
             const services = serviceCollection.find();
@@ -37,6 +38,24 @@ async function run() {
             const query = new ObjectId(id);
             const service = await serviceCollection.findOne(query);
             res.send(service);
+        })
+
+        app.post('/carts', async (req, res) => {
+            const cart = req.body;
+            console.log(cart);
+            const result = await cartCollection.insertOne(cart);
+            res.send(result);
+        })
+
+        app.get('/carts', async (req, res) => {
+            let query = {};
+            if(req.query?.email) {
+                query = {email: req.query.email}
+            }
+
+            const carts = cartCollection.find(query);
+            const result = await carts.toArray();
+            res.send(result);
         })
 
         await client.connect();
