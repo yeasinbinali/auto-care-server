@@ -9,28 +9,13 @@ const port = process.env.PORT || 5000;
 
 // middleware
 app.use(cors({
-    origin: ['http://localhost:5173'],
+    origin: [
+        "http://localhost:5173"
+    ],
     credentials: true
 }));
 app.use(express.json());
 app.use(cookieParser());
-
-const verifyToken = async (req, res, next) => {
-    const token = req.cookies?.token;
-    console.log('Value of token in middleware', token);
-    if (!token) {
-        return res.status(401).send({ message: 'Not Authorized' });
-    }
-    jwt.sign(token, process.env.ACCESS_SECRET_TOKEN, (err, decoded) => {
-        if(err) {
-            console.log(err);
-            return res.status(401).send({ message: 'Unauthorized' });
-        }
-        console.log('Decoded in then token', decoded);
-        req.user = decoded;
-        next();
-    })
-}
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.d7bt1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
@@ -44,24 +29,43 @@ const client = new MongoClient(uri, {
     }
 });
 
+const verifyToken = (req, res, next) => {
+    const token = req?.cookies?.token;
+    if (!token) {
+        return res.status(401).send({ message: 'Unauthorized access' });
+    }
+    jwt.verify(token, process.env.ACCESS_SECRET_TOKEN, (err, decoded) => {
+        if (err) {
+            return res.status(401).send({ message: 'Unauthorized access' })
+        }
+        req.user = decoded;
+        next();
+    })
+}
+
 async function run() {
     try {
 
         const serviceCollection = client.db('AutoCareDB').collection('services');
         const cartCollection = client.db('AutoCareDB').collection('carts');
 
-        // auth related api
         app.post('/jwt', async (req, res) => {
             const user = req.body;
-            console.log(user);
+            console.log('user for token', user);
             const token = jwt.sign(user, process.env.ACCESS_SECRET_TOKEN, { expiresIn: '1h' });
-            res
-                .cookie('token', token, {
-                    httpOnly: true,
-                    secure: false,
-                    // sameSite: 'none'
-                })
+
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: false,
+                sameSite: 'strict'
+            })
                 .send({ success: true });
+        })
+
+        app.post('/logout', async (req, res) => {
+            const user = req.body;
+            console.log('logout user', user);
+            res.clearCookie('token', { maxAge: 0 }).send({ success: true })
         })
 
         app.get('/services', async (req, res) => {
@@ -85,15 +89,14 @@ async function run() {
         })
 
         app.get('/carts', verifyToken, async (req, res) => {
-            console.log('user in the valid token', req.user);
-            if(req.query.email !== req.user.email) {
-                return res.status(403).send({ message: 'Forbidden access' });
+            console.log('Token owner info', req.user)
+            if (req.user.email !== req.query.email) {
+                return res.status(403).send({ message: 'Forbidden access' })
             }
             let query = {};
             if (req.query?.email) {
                 query = { email: req.query.email }
             }
-
             const carts = cartCollection.find(query);
             const result = await carts.toArray();
             res.send(result);
